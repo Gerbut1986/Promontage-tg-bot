@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>New Quote Request - ProMontage</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            margin: 0;
+            padding: 36px 18px;
+        }
+
+        .email-wrapper {
+            max-width: 680px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #1c1f2e 0%, #171a27 100%);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid rgba(255, 215, 0, 0.25);
+        }
+
+        .logo {
+            width: 100%;
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: 22px;
+            color: #f7c848;
+            margin: 0 0 10px 0;
+        }
+
+        .subtitle {
+            color: #f1b02a;
+            margin: 0 0 18px 0;
+            line-height: 1.45;
+            font-size: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 16px 0 8px 0;
+        }
+
+        .box {
+            background: rgba(255, 215, 0, 0.08);
+            border: 1px solid rgba(255, 215, 0, 0.22);
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #ffdd8b;
+        }
+
+        .box-wide {
+            grid-column: 1 / -1;
+        }
+
+        .label {
+            color: #f7c848;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 6px;
+            letter-spacing: 0.2px;
+        }
+
+        .value {
+            color: #ffdd8b;
+            word-break: break-word;
+        }
+
+        .actions {
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: #f7c848;
+            color: #121212 !important;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 6px 6px 0 6px;
+        }
+
+        .hint {
+            margin-top: 14px;
+            color: #ffdd8b;
+            line-height: 1.45;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .footer {
+            margin-top: 22px;
+            font-size: 12px;
+            color: #bca35a;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .muted {
+            color: #cdbb82;
+            font-size: 12px;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="email-wrapper">
+
+        <div class="logo">
+            <img src="cid:coinlogo" alt="ProMontage" width="100%" height="220" style="display:block; object-fit:cover;" />
+        </div>
+
+        <h1>📥 NEW QUOTE REQUEST</h1>
+        <p class="subtitle">
+            Через Telegram-бота отправлен новый запрос. Пожалуйста, ознакомьтесь с подробностями и свяжитесь с клиентом.
+        </p>
+
+        <div class="grid">
+            <div class="box">
+                <span class="label">🆔 Chat ID</span>
+                <span class="value">{{CHAT_ID}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">✈️ Telegram</span>
+                <span class="value">
+                    <a href="{{TELEGRAM_LINK}}" style="color:#7db4ff; text-decoration:none; font-weight:700;">
+                        {{USERNAME}}
+                    </a>
+                </span>
+            </div>
+
+            <div class="box box-wide">
+                <span class="label">👤 Клиент</span>
+                <span class="value">{{CLIENT_NAME}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">📞 Phone</span>
+                <span class="value">{{PHONE}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">🛠️ Услуга</span>
+                <span class="value">{{SERVICE}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">📮 Почт.индекс</span>
+                <span class="value">{{POSTAL_CODE}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">📍 Город</span>
+                <span class="value">{{CITY}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">🏠 Тип жилья #1</span>
+                <span class="value">{{HOUSING_1}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">🏠 Тип жилья #2</span>
+                <span class="value">{{HOUSING_2}}</span>
+            </div>
+
+            <div class="box box-wide">
+                <span class="label">📦 Расположение мебели</span>
+                <span class="value">{{FURNITURE_LOCATION}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">🏢 Переноска по полу (при необходимости)</span>
+                <span class="value">{{CARRY_FLOOR}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">🏢 Рабочий этаж</span>
+                <span class="value">{{FLOOR}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">🛗 Лифт?</span>
+                <span class="value">{{ELEVATOR}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">🍽️ Кухонный бренд</span>
+                <span class="value">{{KITCHEN_BRAND}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">📏 Размер кухни</span>
+                <span class="value">{{KITCHEN_SIZE}}</span>
+            </div>
+
+            <div class="box box-wide">
+                <span class="label">📐 Конфигурация кухни</span>
+                <span class="value">{{KITCHEN_CONFIG}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">📸 Фотографии</span>
+                <span class="value">{{PHOTOS_COUNT}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">🎥 Видео</span>
+                <span class="value">{{VIDEOS_COUNT}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">📎 Вокументы</span>
+                <span class="value">{{DOCS_COUNT}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">🕒 Дата заполнения заявки</span>
+                <span class="value">{{DATE}}</span>
+            </div>
+        </div>
+
+        <div class="actions">
+            <a class="btn" href="{{TELEGRAM_LINK}}">Открыть в Telegram</a>
+        </div>
+
+        <div class="hint">
+            Пожалуйста, свяжитесь с клиентом как можно скорее, чтобы подтвердить детали и подготовить коммерческое предложение.
+        </div>
+
+        <div class="footer">
+            — ProMontage | IKEA & Furniture Assembly Services<br />
+            www.promontage.ch
+        </div>
+
+        <div class="muted">
+            This message was generated automatically by @promontage_ch_bot.
+        </div>
+
+    </div>
+
+</body>
+</html>
